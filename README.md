@@ -22,3 +22,6 @@
 ### Why This Project
   It is very simple to incorporate into the design, hilarious to employ, and demonstrates one’s Web abilities at your disposal without making much of a fuss out of it. It also helps you fulfill all the course objectives in a fun way. it is easy to implement and funny to use.
 
+
+### Deployed link:
+https://s66-late-o-matic.onrender.com
