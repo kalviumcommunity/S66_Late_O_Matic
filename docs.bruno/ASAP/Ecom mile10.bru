@@ -1,0 +1,18 @@
+meta {
+  name: Ecom mile10
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:8080/create
+  body: multipartForm
+  auth: none
+}
+
+body:multipart-form {
+  productName: apple
+  productDescription: apple is a fruit asdfghjklasdfghjklasdfghjklasdfghjklasdfghjkl;asdfghjkl;asdfghjkl
+  productPrice: twenty
+  productImage: @file(C:\Users\fibaa\OneDrive\Pictures\Screenshots\Screenshot 2024-10-21 135255.png|C:\Users\fibaa\OneDrive\Pictures\Screenshots\Screenshot 2024-10-21 135726.png|C:\Users\fibaa\OneDrive\Pictures\Screenshots\Screenshot 2024-10-21 135808.png)
+}
