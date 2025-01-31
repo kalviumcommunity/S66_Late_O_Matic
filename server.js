@@ -4,9 +4,18 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv')
 dotenv.config()
 app.use(express.json())
-const mongoURL = process.env.mongo
-const connection = mongoose.connect(mongoURL)
+const db =require("./database")
+db()
+const PORT = 8080;
+
+
 const user = require('./model/user.model')
+
+app.get("/",async(req,res)=>{
+    const status = mongoose.connection.readyState===1?"connected to mongodb successfully"
+    : "not connected to mongodb"
+    res.json({"message":"Welcome to LateOMatic",database:status})
+})
 
 app.get("/ping",function(req,res){
     res.send("pong");
@@ -27,15 +36,10 @@ app.post("/create",async(req,res)=>{
     
 
 })
-const PORT = 8080;
+
 
 app.listen(PORT, async() => {
-    try{
-        await connection 
-        console.log(`Connected to MongoDB`)
-    }catch(error){
-        console.error(error)
-    }
+ 
     console.log(`Server running at http://localhost:${PORT}`);
 
 });
