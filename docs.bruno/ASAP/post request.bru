@@ -1,0 +1,19 @@
+meta {
+  name: post request
+  type: http
+  seq: 6
+}
+
+post {
+  url: http://localhost:8080/users
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "username":"kitty",
+    "email":"kitty766@gmail.com",
+    "password":"hellokitty"
+  }
+}

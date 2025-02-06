@@ -7,36 +7,11 @@ app.use(express.json())
 const db =require("./database")
 db()
 const PORT = 8080;
-
+const routes = require("./router/routes")
 
 const user = require('./model/user.model')
 
-app.get("/",async(req,res)=>{
-    const status = mongoose.connection.readyState===1?"connected to mongodb successfully"
-    : "not connected to mongodb"
-    res.json({"message":"Welcome to LateOMatic",database:status})
-})
-
-app.get("/ping",function(req,res){
-    res.send("pong");
-})
-
-app.post("/create",async(req,res)=>{
-    let {username,email,password}=req.body
-    let payload = {username,email,password}
-    try{
-        let newUser = new user(payload)
-        await newUser.save()
-        res.send({"message":"newUser created"})
-    }catch(error){
-        console.error(error)
-        res.send({"message":"couldn't create newUser",error:error.message})
-
-    }
-    
-
-})
-
+app.use('/',routes)
 
 app.listen(PORT, async() => {
  
