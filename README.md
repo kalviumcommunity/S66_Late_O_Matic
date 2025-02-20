@@ -27,4 +27,5 @@
 https://s66-late-o-matic.onrender.com
 
 ### Frontend Deployed link:
+
 https://b9e5862a.lateomatic.pages.dev/
