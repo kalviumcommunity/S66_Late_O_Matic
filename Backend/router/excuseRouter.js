@@ -21,5 +21,27 @@ excuseRouter.get('/excuses',async(req,res)=>{
     }
 })
 
+excuseRouter.post('/add-excuse', async (req, res) => {
+    try {
+      const newExcuse = new excuses(req.body);
+      await newExcuse.save();
+      res.status(201).json(newExcuse);
+    } catch (err) {
+      console.error("POST error:", err);
+      res.status(500).json({ message: "Failed to add excuse", error: err.message });
+    }
+  });
+  
+  // GET: Retrieve all excuses
+  excuseRouter.get('/add-excuse', async (req, res) => {
+    try {
+      const allExcuses = await excuses.find();
+      res.status(200).json(allExcuses);
+    } catch (err) {
+      console.error("GET error:", err);
+      res.status(500).json({ message: "Error fetching excuses", error: err.message });
+    }
+  });
+
 
 module.exports = excuseRouter;
