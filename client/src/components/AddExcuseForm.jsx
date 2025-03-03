@@ -1,24 +1,15 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-
 const AddExcuseForm = () => {
   const [excuse, setExcuse] = useState("");
   const [author, setAuthor] = useState("");
   const navigate = useNavigate();
 
-  const onExcuseAdded = ()=>{
-    alert("New excuse added")
-    setExcuse("");
-    setAuthor("");
-    navigate("/excuses")
-    
-  }
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:8080/add-excuse", {
+      const response = await fetch("http://localhost:8080/excuses", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ excuse, author }),
@@ -26,10 +17,10 @@ const AddExcuseForm = () => {
 
       if (!response.ok) throw new Error("Failed to add excuse");
 
-      const newExcuse = await response.json();
-      console.log(newExcuse)
-      onExcuseAdded();
-
+      alert("New excuse added");
+      setExcuse("");
+      setAuthor("");
+      navigate("/excuses");
     } catch (error) {
       console.error("Error adding excuse:", error);
     }
