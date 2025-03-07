@@ -6,6 +6,7 @@ const db = require('./database');
 const routes = require('./router/routes');
 const excuseRouter = require('./router/excuseRouter');
 
+
 dotenv.config();
 
 const app = express();
@@ -18,6 +19,8 @@ db();
 
 app.use('/', routes);
 app.use('/excuses', excuseRouter);
+
+
 
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);

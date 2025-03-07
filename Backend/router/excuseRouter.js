@@ -2,7 +2,7 @@ const express = require('express');
 const excuseRouter = express.Router();
 const Excuse = require('../model/excuse.model');
 
-// Create a new excuse
+
 excuseRouter.post('/', async (req, res) => {
     try {
         const newExcuse = new Excuse(req.body);
@@ -13,7 +13,7 @@ excuseRouter.post('/', async (req, res) => {
     }
 });
 
-// Retrieve all excuses
+
 excuseRouter.get('/', async (req, res) => {
     try {
         const allExcuses = await Excuse.find();
@@ -23,7 +23,7 @@ excuseRouter.get('/', async (req, res) => {
     }
 });
 
-// Update an excuse by ID
+
 excuseRouter.put('/:id', async (req, res) => {
     try {
         const updatedExcuse = await Excuse.findByIdAndUpdate(req.params.id, req.body, { new: true });
@@ -34,7 +34,7 @@ excuseRouter.put('/:id', async (req, res) => {
     }
 });
 
-// Delete an excuse by ID
+
 excuseRouter.delete('/:id', async (req, res) => {
     try {
         const deletedExcuse = await Excuse.findByIdAndDelete(req.params.id);

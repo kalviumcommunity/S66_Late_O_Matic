@@ -19,6 +19,7 @@ const UpdateExcuseForm = () => {
 
       if (!response.ok) throw new Error("Failed to update excuse");
 
+      alert("Excuse updated successfully!");
       navigate("/excuses");
     } catch (error) {
       console.error("Error updating excuse:", error);
@@ -26,12 +27,35 @@ const UpdateExcuseForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 p-4 max-w-md mx-auto">
-      <h2 className="text-xl font-semibold">Update Excuse</h2>
-      <input type="text" value={excuse} onChange={(e) => setExcuse(e.target.value)} required className="w-full p-2 border rounded" />
-      <input type="text" value={author} onChange={(e) => setAuthor(e.target.value)} className="w-full p-2 border rounded" />
-      <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded">Update Excuse</button>
-    </form>
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="bg-white p-6 shadow-lg rounded-xl w-full max-w-md">
+        <h2 className="text-2xl font-bold text-gray-800 text-center mb-4">Update Excuse</h2>
+
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <input
+            type="text"
+            value={excuse}
+            onChange={(e) => setExcuse(e.target.value)}
+            required
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="Excuse"
+          />
+          <input
+            type="text"
+            value={author}
+            onChange={(e) => setAuthor(e.target.value)}
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="Author (Optional)"
+          />
+          <button
+            type="submit"
+            className="w-full bg-blue-500 text-white py-3 rounded-lg shadow-md hover:bg-blue-600 transition-all"
+          >
+            Update Excuse
+          </button>
+        </form>
+      </div>
+    </div>
   );
 };
 
