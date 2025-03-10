@@ -1,52 +1,44 @@
-// import React from "react";
-// import ExcuseCard from "./excuseCard";
-
 const Home = () => {
-  // const dummyExcuses = [
-  //   { excuse: "My goldfish was depressed.", author: "John Doe" },
-  //   {excuse:"I slept late, So i woke up late",author:"Thameem"},
-  //   {excuse: "My Fish was drowning",author:"Abdul" },
-  // ];
-
   return (
-    <div className="h-screen bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 flex flex-col items-center justify-center text-white">
-      <header className="text-center mb-10">
-        <h1 className="text-5xl font-extrabold mb-3">Late-O-Matic</h1>
-        <p className="text-lg">The funniest excuses for your tardiness.</p>
+    <div className="h-screen bg-slate-200 flex flex-col items-center justify-center text-gray-900 px-6">
+      <header className="text-center mb-12">
+        <h1 className="text-6xl font-extrabold tracking-tight mb-2 text-gray-800 drop-shadow-md">
+          Late-O-Matic
+        </h1>
+        <p className="text-lg text-gray-700 opacity-90">The funniest excuses for your tardiness.</p>
       </header>
 
-      <section className="max-w-lg bg-white text-black p-6 rounded-lg shadow-lg mb-10">
-        <h2 className="text-3xl font-bold text-center mb-4">Why Choose Us?</h2>
-        <ul className="list-disc pl-5 space-y-3">
-          <li>✔ Hilarious excuses to save your day!</li>
-          <li>✔ Simple, easy-to-use UI</li>
-          <li>✔ Manage your excuses effortlessly</li>
+      <section className="max-w-lg bg-white text-gray-900 p-8 rounded-2xl shadow-lg mb-10 text-center">
+        <h2 className="text-3xl font-semibold mb-4 text-gray-800">Why Choose Us?</h2>
+        <ul className="list-none space-y-3">
+          <li className="flex items-center gap-2">
+            <span className="text-green-500 text-xl">✔</span> Hilarious excuses to save your day!
+          </li>
+          <li className="flex items-center gap-2">
+            <span className="text-green-500 text-xl">✔</span> Simple, easy-to-use UI
+          </li>
+          <li className="flex items-center gap-2">
+            <span className="text-green-500 text-xl">✔</span> Manage your excuses effortlessly
+          </li>
         </ul>
       </section>
-{/* 
-      <section className="flex flex-col items-center gap-4 mb-10">
-        <h2 className="text-2xl font-bold">Recent Excuses</h2>
-        {dummyExcuses.map((item, index) => (
-          <ExcuseCard key={index} excuse={item.excuse} author={item.author} />
-        ))}
-      </section> */}
 
-      <section className="flex justify-around w-full max-w-lg">
+      <section className="flex gap-6">
         <a
           href="/login"
-          className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700 transition duration-300"
+          className="px-6 py-3 rounded-lg bg-indigo-300 text-gray-900 font-medium shadow-lg hover:bg-indigo-400 transition-transform transform hover:scale-105"
         >
           Log In
         </a>
         <a
-          href="/signup"
-          className="px-6 py-3 bg-pink-600 text-white rounded-lg shadow-lg hover:bg-pink-700 transition duration-300"
+          href="/sign-up"
+          className="px-6 py-3 rounded-lg bg-pink-300 text-gray-900 font-medium shadow-lg hover:bg-pink-400 transition-transform transform hover:scale-105"
         >
           Sign Up
         </a>
       </section>
 
-      <footer className="absolute bottom-5 text-sm text-center">
+      <footer className="absolute bottom-5 text-sm text-center opacity-80">
         <p>&copy; 2025 Late-O-Matic. All rights reserved.</p>
       </footer>
     </div>

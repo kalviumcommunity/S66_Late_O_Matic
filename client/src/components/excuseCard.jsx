@@ -25,6 +25,7 @@ const ExcuseCard = () => {
         method: "DELETE",
       });
       if (!res.ok) throw new Error("Failed to delete excuse");
+      alert("Deleting excuse");
 
       setExcuses(excuses.filter((excuse) => excuse._id !== id));
     } catch (err) {
@@ -36,26 +37,39 @@ const ExcuseCard = () => {
     fetchExcuses();
   }, []);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p className="text-gray-600 text-center">Loading...</p>;
 
   return (
-    <div className="space-y-4 p-4">
-      <button onClick={() => navigate("/add-excuse")} className="bg-green-500 text-white py-2 px-4 rounded">
+    <div className="min-h-screen bg-slate-100 flex flex-col items-center py-10 px-4">
+      <button
+        onClick={() => navigate("/add-excuse")}
+        className="mb-6 px-6 py-3 bg-green-300 text-gray-900 font-medium rounded-lg shadow-md hover:bg-green-400 transition-transform transform hover:scale-105"
+      >
         Add New Excuse
       </button>
 
-      {excuses.map((excuse) => (
-        <div key={excuse._id} className="bg-gray-100 p-4 rounded shadow">
-          <h3 className="font-semibold">{excuse.excuse}</h3>
-          <p className="text-sm text-gray-600">- {excuse.author || "Anonymous"}</p>
-          <button onClick={() => navigate(`/update-excuse/${excuse._id}`, { state: excuse })} className="bg-yellow-500 text-white px-2 py-1 rounded mr-2">
-            Edit
-          </button>
-          <button onClick={() => deleteExcuse(excuse._id)} className="bg-red-500 text-white px-2 py-1 rounded">
-            Delete
-          </button>
-        </div>
-      ))}
+      <div className="w-full max-w-lg space-y-4">
+        {excuses.map((excuse) => (
+          <div key={excuse._id} className="bg-white p-6 rounded-2xl shadow-md">
+            <h3 className="font-semibold text-lg text-gray-800">{excuse.excuse}</h3>
+            <p className="text-sm text-gray-600 mt-1">- {excuse.author || "Anonymous"}</p>
+            <div className="mt-4 flex gap-4">
+              <button
+                onClick={() => navigate(`/update-excuse/${excuse._id}`, { state: excuse })}
+                className="px-4 py-2 bg-yellow-300 text-gray-900 font-medium rounded-lg shadow-md hover:bg-yellow-400 transition-transform transform hover:scale-105"
+              >
+                Edit
+              </button>
+              <button
+                onClick={() => deleteExcuse(excuse._id)}
+                className="px-4 py-2 bg-red-300 text-gray-900 font-medium rounded-lg shadow-md hover:bg-red-400 transition-transform transform hover:scale-105"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
