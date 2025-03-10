@@ -10,7 +10,7 @@ const excuseRouter = require('./router/excuseRouter');
 dotenv.config();
 
 const app = express();
-const PORT = 8080;
+const Port = process.env.PORT || 8081;
 
 app.use(express.json());
 app.use(cors());
@@ -22,6 +22,6 @@ app.use('/excuses', excuseRouter);
 
 
 
-app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
+app.listen(Port, () => {
+    console.log(`Server running at http://localhost:${Port}`);
 });
