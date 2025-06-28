@@ -1,31 +1,36 @@
+# LateOmatic - Excuse Generator Website
 
-### Project Title  
- List of Silliest Excuses for Being Late
+A fun website where users can create and share hilarious excuses for being late!
 
-### Project Overview
-  An application through which people enter their temporary username and password, and they are displayed the list of the most hilarious and absurd alibis for tardiness (for example, “My goldfish was depressed,” “I got lost in the infinity of Netflix). Account users can input their own excuses, modify it, or erase it.  
+## Quick Start
 
-### Key Features  
-1. **User Authentication**: Every user receives a possibility to log in and manage their list of excuses.  
-2. **CRUD Functionality**:  
-    - Add a new excuse.  
-    - Edit an existing excuse.  
-    - Delete an excuse.  
-    - See list of excuses.  
-3. **Responsive UI**: About clean and minimalist design of the front end.  
-### Tech Stack 
-  - **Frontend**: React with Vite, CSS  
-  - **Backend**: Node.js with Express  
-  - **Database**: MongoDB with Mongoose  
-  - **Authentication**: Standard login using JWT or Session  
+### Backend (Terminal 1)
+```bash
+cd Backend
+npm start
+```
+Server runs on: http://localhost:8080
 
-### Why This Project
-  It is very simple to incorporate into the design, hilarious to employ, and demonstrates one’s Web abilities at your disposal without making much of a fuss out of it. It also helps you fulfill all the course objectives in a fun way. it is easy to implement and funny to use.
+### Frontend (Terminal 2)
+```bash
+cd client
+npm run dev
+```
+Website runs on: http://localhost:5173
 
+## Features
+- User registration and login
+- Create, edit, and delete excuses
+- Like and filter excuses
+- Random excuse generator
+- Modern dark theme UI
+- Mobile responsive design
 
-### Backend Deployed link:
-https://s66-late-o-matic.onrender.com
+## Tech Stack
+- **Backend**: Node.js + Express + MongoDB
+- **Frontend**: React + Vite + Tailwind CSS
+- **Database**: MongoDB
 
-### Frontend Deployed link:
-
-https://b9e5862a.lateomatic.pages.dev/
+## Live Demo
+- Frontend: https://b9e5862a.lateomatic.pages.dev/
+- Backend: https://s66-late-o-matic.onrender.com
