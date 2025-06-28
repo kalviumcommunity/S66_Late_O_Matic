@@ -6,7 +6,7 @@ const mongoURL = process.env.mongo;
 
 const connection = async () => {
   try {
-    await mongoose.connect(mongoURL); // Removed deprecated options
+    await mongoose.connect(mongoURL); 
     console.log(`Connected to MongoDB`);
   } catch (error) {
     console.error('MongoDB connection error:', error);
